@@ -8,7 +8,6 @@ export const Routes = () => {
       <MyRoutes>
         <Route exact path="/" element={<Navigate to="/search"/>} />
         <Route exact path="/search" element={<Result />} />
-        <Route exact path="/shop" element={<Result />} />
       </MyRoutes>
     </div>
   );
