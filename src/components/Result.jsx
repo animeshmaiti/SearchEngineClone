@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import searchLogo from "../icons8-search-480.png";
 
 import { useResultContext } from "../contexts/ResultContextProvider";
 import { Loading } from "./Loading";
@@ -11,7 +12,7 @@ export const Result = () => {
 
   useEffect(() => {
     if (searchTerm !== "") {
-      getResults(`Nike`);
+      getResults(`${searchTerm}`);
     } else {
       setShowTemplate(true);
     }
@@ -26,8 +27,9 @@ export const Result = () => {
       return (
         <>
           {showTemplate && (
-            <div>
-              <h1>Search for something</h1>
+            <div className="min-h-[60vh] flex justify-center items-center flex-col">
+                <img src={searchLogo} alt="Image" className="w-60" />
+                <p className="text-4xl text-[#9494b8] dark:text-sky-400/25 font-bold">Search for something</p>
             </div>
           )}
           <div className="sm:px-56 flex flex-wrap justify-between space-y-6">
