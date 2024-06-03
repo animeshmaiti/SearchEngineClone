@@ -13,6 +13,7 @@ export const Result = () => {
   useEffect(() => {
     if (searchTerm !== "") {
       getResults(`${searchTerm}`);
+      setShowTemplate(false);
     } else {
       setShowTemplate(true);
     }
